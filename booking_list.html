@@ -1,0 +1,23 @@
+{% extends 'events/base.html' %}
+{% block content %}
+<br></br>
+<h1>My Bookings</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Event</th>
+            <th>Status</th>
+            <th>Booking Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.event.title }}</td>
+                <td>{{ booking.status }}</td>
+                <td>{{ booking.booking_date }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

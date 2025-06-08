@@ -1,0 +1,16 @@
+{% extends 'events/base.html' %}
+{% block content %}
+<div class="card">
+    <div class="card-header">{{ event.title }}</div>
+    <div class="card-body">
+        {% if event.image %}
+            <img src="{{ event.image.url }}" class="img-fluid mb-3">
+        {% endif %}
+        <p>{{ event.description }}</p>
+        <p><strong>Category:</strong> {{ event.category.name }}</p>
+        <p><strong>Date:</strong> {{ event.date }}</p>
+        <p><strong>Location:</strong> {{ event.location }}</p>
+        <a href="{% url 'book_event' event.id %}" class="btn btn-success">Book Now</a>
+    </div>
+</div>
+{% endblock %}
